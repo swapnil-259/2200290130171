@@ -1,0 +1,9 @@
+# Ignore environment files
+env/
+
+# Ignore PostgreSQL and pgAdmin data directories
+postgres_data/
+pgadmin_data/
+
+# Ignore secret.py
+secret.py

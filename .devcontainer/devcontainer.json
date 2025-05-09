@@ -1,0 +1,33 @@
+{
+    "name": "test-assignment",
+    "dockerComposeFile": [
+        "../docker/docker-compose.yaml"
+    ],
+    "service": "test_django",
+    "workspaceFolder": "/test_assignment",
+    "runServices": [
+        "test_django",
+        "test_postgres",
+        "test_pgadmin"
+    ],
+        "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "batisteo.vscode-django",
+                "streetsidesoftware.code-spell-checker",
+                "ms-python.black-formatter",
+                "ms-python.isort",
+                "njpwerner.autodocstring",
+                "eamodio.gitlens",
+                "ms-azuretools.vscode-docker"
+            ],
+            "settings": {
+                "editor.codeActionsOnSave": {
+                    "source.fixAll": true,
+                    "source.organizeImports": true
+                }
+            }
+        }
+    }
+}

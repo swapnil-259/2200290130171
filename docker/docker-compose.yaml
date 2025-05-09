@@ -1,0 +1,39 @@
+services:
+  test_postgres:
+    image: postgres
+    container_name: testtsql
+    restart: always
+    ports:
+      - 5440:5432
+    env_file:
+      - ../env/postgres.env
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+
+  test_pgadmin:
+    container_name: testpgadmin
+    image: dpage/pgadmin4
+    restart: always
+    env_file:
+      - ../env/pgadmin.env
+    ports:
+      - 99:80
+    depends_on:
+      - test_postgres
+    volumes:
+      - ./pgadmin_data:/var/lib/pgadmin/storage/
+
+  test_django:
+    build:
+      context: .
+    ports:
+      - 8880:8000
+    volumes:
+      - ../:/test_assignment
+    restart: always
+    container_name: testdjango
+    command: /bin/sh -c "while sleep 1000; do :; done"
+
+volumes:
+  pgadmin_data:
+  postgres_data:
