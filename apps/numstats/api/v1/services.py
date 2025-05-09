@@ -2,10 +2,11 @@ import requests
 from django.db.models import Avg
 from apps.numstats.models import Number
 from apps.numstats.choices import StatusChoices
+import secret
 
 class NumberFetcher:
     BASE_URL = "http://20.244.56.144/evaluation-service/"
-    API_TOKEN ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzQ2ODAwODI1LCJpYXQiOjE3NDY4MDA1MjUsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6IjAwYTViMDFjLWZiYWUtNDY4Ny04ZmEzLWY0MGM4NWJmMjhiOCIsInN1YiI6InN3YXBuaWwuMjIyNmVjMTA4OEBraWV0LmVkdSJ9LCJlbWFpbCI6InN3YXBuaWwuMjIyNmVjMTA4OEBraWV0LmVkdSIsIm5hbWUiOiJzd2FwbmlsIGFncmF3YWwiLCJyb2xsTm8iOiIyMjAwMjkwMTMwMTcxIiwiYWNjZXNzQ29kZSI6IlN4VmVqYSIsImNsaWVudElEIjoiMDBhNWIwMWMtZmJhZS00Njg3LThmYTMtZjQwYzg1YmYyOGI4IiwiY2xpZW50U2VjcmV0Ijoic0FyRWp0VXNkenBGSGFrViJ9.4o6k2l2FmVcU4U7RsjU7LuFQpSJrpjdSAzSJyBcmKAc"
+    API_TOKEN =secret.API_TOKEN
 
     @staticmethod
     def fetch_numbers(number_id):
