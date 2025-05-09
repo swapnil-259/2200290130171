@@ -1,6 +1,16 @@
 # Ignore environment files
 env/
 
+# Ignore all migrations except __init__.py
+**/migrations/*
+!**/migrations/__init__.py
+
+# Ignore compiled Python files
+**/__pycache__/
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+
 # Ignore PostgreSQL and pgAdmin data directories
 postgres_data/
 pgadmin_data/
